@@ -9,28 +9,33 @@ const HamburgerMenu = () => {
   };
 
   return (
-    <div className='w-screen'>
-    <div 
-      className={`${styles.navIcon} ${isOpen ? styles.open : ''} z-10`}
-      onClick={handleClick}
-    >
-      <span></span>
-      <span></span>
-      <span></span>
-      <span></span>
-      <span></span>
-      <span></span>
-
-
+    <div>
+        <div 
+          className={`${styles.navIcon} ${isOpen ? styles.open : ''} z-10`}
+          onClick={handleClick}
+        >
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+        
+    <div className={`${styles.sidebar} ${isOpen? styles.active:''}`}>
+        <ul>
+          <li>
+            <a href="/">Home</a>
+          </li>
+          <li>
+            <a href="/about">About</a>
+          </li>
+          <li>
+            <a href="/contact">Contact</a>
+          </li>
+        </ul>
+    <div >
     </div>
-    <div className={`${isOpen ?('hidden'):('visible')} grid grid-cols-2`}>
-      {/* I would like to make a transition from h-0 to h-screen that eases in and out in a .5s manner  */}
-      
-      <div className={`${styles.grayColumn} ${isOpen ? styles.open:''}`}>
-      </div>
-    
-      <div className='h-screen bg-gray-400 w-full   top-0'>
-      </div>
     </div>
     </div>
   );
